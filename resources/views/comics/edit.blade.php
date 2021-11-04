@@ -34,7 +34,12 @@
                     </div>
                     <div class="form-group">
                         <label for="type">Type</label>
-                        <input value="{{ $comic['type'] }}" type="text" name="type" class="form-control" id="type" placeholder="Enter the type of the comic">
+                        {{-- <input value="{{ $comic['type'] }}" type="text" name="type" class="form-control" id="type" placeholder="Enter the type of the comic"> --}}
+                        <select class="form-control" name="type" id="type">
+                            <option value="">-- seleziona --</option>
+                            <option value="a" {{ $comic['type'] == 'a' ? 'selected' : null}}>a</option>
+                            <option value="b" {{ $comic['type'] == 'b' ? 'selected' : null}}>b</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
