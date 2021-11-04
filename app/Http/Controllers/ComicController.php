@@ -34,7 +34,7 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) 
     {
         $comic = $request->all();
 
@@ -58,8 +58,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic)
+    public function show(Comic $comic) //oppure $id
     {
+        // $comic = $request->find($id);
         return view('comics.show', compact('comic'));
     }
 
@@ -69,7 +70,7 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comic $comic) //$id
+    public function edit(Comic $comic) //oppure $id
     {
         /* $comic= Comic::find($id);
         if ($comic) {
@@ -101,8 +102,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index');
     }
 }
