@@ -14,7 +14,8 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input value="{{ $comic['description'] }}" type="text" name="description" class="form-control" id="description" placeholder="Enter the description of the comic">
+                        {{-- <input value="{{ $comic['description'] }}" type="text" name="description" class="form-control" id="description" placeholder="Enter the description of the comic"> --}}
+                        <textarea class="form-control" name="description" id="description">{!! $comic['description'] !!}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="thumb">Thumbnail link</label>

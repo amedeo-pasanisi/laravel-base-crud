@@ -24,6 +24,10 @@
                                 <td>{{ $comic['series'] }}</td>
                                 <td>
                                     <a href="{{ route('comics.show', $comic['id']) }}"
+                                        {{-- 
+                                            si può anche scrivere
+                                            {{ route('comics.show', $comic->'id') }}
+                                        --}}
                                         class="btn btn-info">
                                         Details
                                     </a>
@@ -31,7 +35,7 @@
                                         class="btn btn-warning">
                                         Modify
                                     </a>
-                                    <form method="post" action="{{ route('comics.destroy', $comic['id']) }}">
+                                    <form class="d-inline-block" method="post" action="{{ route('comics.destroy', $comic['id']) }}">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>

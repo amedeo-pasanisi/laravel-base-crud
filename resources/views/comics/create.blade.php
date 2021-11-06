@@ -22,12 +22,13 @@
                         <input type="text" name="title" class="form-control" id="title" placeholder="Enter the name of the comic">
                     
                         @error('title')
-                            <div class="alert alert-danger">{{ $error }}</div>
+                            <div class="alert alert-danger"> {{$message}} </div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" name="description" class="form-control" id="description" placeholder="Enter the description of the comic">
+                        {{-- <input type="text" name="description" class="form-control" id="description" placeholder="Enter the description of the comic"> --}}
+                        <textarea class="form-control" name="description" id="description"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="thumb">Thumbnail link</label>
@@ -54,7 +55,7 @@
                             <option value="b">b</option>
                         </select>
                         @error('type')
-                            <div class="alert alert-danger">{{ $error }}</div>
+                            <div class="alert alert-danger">{{$message}}</div>
                         @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
